@@ -70,7 +70,7 @@ const Hero = () => {
           </motion.div>
 
           {/* IMAGE COLUMN */}
-          <div className="order-1 lg:order-2 flex justify-center lg:justify-end mt-10 lg:mt-0">
+          <div className="order-1 lg:order-2 flex justify-center lg:justify-end mt-25 lg:mt-0">
             <ProfileImage />
           </div>
 
