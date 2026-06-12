@@ -1,0 +1,38 @@
+@import "tailwindcss";
+
+:root {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  color: white;
+  background: #050505;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.05), transparent 30%),
+    #050505;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: white;
+  color: black;
+}
+
+.fade-bottom {
+  mask-image: linear-gradient(
+    to bottom,
+    white 80%,
+    transparent 100%
+  );
+}
