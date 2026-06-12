@@ -7,7 +7,7 @@ import ProfileImage from "../../components/hero/ProfileImage"
 
 const Hero = () => {
   return (
-    <section className="min-h-screen flex items-center relative">
+    <section className="min-h-screen flex items-center relative pt-24 lg:pt-0">
       <Container>
         <div className="grid lg:grid-cols-2 gap-16 items-center">
 
