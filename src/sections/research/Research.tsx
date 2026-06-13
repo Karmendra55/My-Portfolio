@@ -40,6 +40,7 @@ const Research = () => {
         />
 
         {/* Research Cards */}
+        <br></br>
         <div className="grid lg:grid-cols-2 gap-8">
 
           {research.map((item) => (
@@ -140,58 +141,6 @@ const Research = () => {
                   )}
 
                 </div>
-
-              </div>
-
-                <p className="text-zinc-400 leading-relaxed mt-6">
-                  {item.description}
-                </p>
-
-                <div className="flex gap-3 mt-8">
-
-                {item.url !== "#" && (
-                  <a
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${item.title} publication`}
-                    className="
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-full
-                      border border-white/10
-                      transition
-                      hover:bg-white/10
-                    "
-                  >
-                    <FileText size={18} />
-                  </a>
-                )}
-
-                {researchCertificateFiles[item.id] && (
-                  <a
-                    href={researchCertificateFiles[item.id]}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    aria-label={`${item.title} certificate`}
-                    className="
-                      flex
-                      h-11
-                      w-11
-                      items-center
-                      justify-center
-                      rounded-full
-                      border border-white/10
-                      transition
-                      hover:bg-white/10
-                    "
-                  >
-                    <Award size={18} />
-                  </a>
-                )}
 
               </div>
 
