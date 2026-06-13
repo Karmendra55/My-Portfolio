@@ -2,7 +2,7 @@ export const experiences = [
   {
     role: "Machine Learning Intern",
     company: "Unified Mentor",
-    duration: "Apr 2025 – Present",
+    duration: "Apr 2025 – Oct 2025",
 
     description:
       "Developing end-to-end ML applications including Thyroid Prediction and ASL Detection systems using Python, Scikit-learn, and Streamlit deployment workflows.",

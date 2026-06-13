@@ -3,7 +3,17 @@ import { FaGithub, FaLinkedin } from "react-icons/fa"
 
 import Container from "../../components/ui/Container"
 import Reveal from "../../components/ui/Reveal"
-import SectionTitle from "../../components/ui/SectionTitle"
+import SectionTitle from "../../components/ui/SectionHeader"
+import StatusBadge from "../../components/ui/StatusBadge"
+import GlassCard from "../../components/ui/GlassCard"
+import Button from "../../components/ui/Button"
+
+const opportunities = [
+  "Machine Learning Engineer",
+  "Data Engineer",
+  "Software Developer",
+  "Research Collaborations",
+]
 
 const Contact = () => {
   return (
@@ -12,36 +22,50 @@ const Contact = () => {
       className="py-32"
     >
       <Container>
+
         <Reveal>
           <SectionTitle
-            title="Let’s Connect"
-            subtitle="Contact"
+            title="Let's Connect"
+            subtitle="Opportunities & Collaborations"
           />
         </Reveal>
 
         <Reveal>
-          <div
+          <GlassCard
             className="
-              rounded-[3rem]
-              border border-white/10
-              bg-white/3
+              relative
+              overflow-hidden
               p-10 md:p-16
             "
           >
-            <div className="max-w-3xl">
+            {/* Background Glow */}
+            <div
+              className="
+                absolute
+                inset-0
+                bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_40%)]
+              "
+            />
+
+            <div className="relative z-10">
+
+              {/* Availability */}
+              <StatusBadge>
+                Open to Full-Time Opportunities
+              </StatusBadge>
+
               <h3
                 className="
-                  text-3xl
-                  md:text-5xl
+                  text-4xl
+                  md:text-6xl
                   font-bold
                   leading-tight
-                  mb-8
+                  max-w-5xl
                 "
               >
-                Interested in building
-                intelligent systems,
-                cloud applications,
-                or futuristic digital experiences?
+                Building intelligent systems,
+                scalable software, and
+                future-focused technology.
               </h3>
 
               <p
@@ -49,66 +73,69 @@ const Contact = () => {
                   text-zinc-400
                   text-lg
                   leading-relaxed
-                  mb-10
+                  max-w-3xl
+                  mt-8
                 "
               >
-                Open to full-time opportunities, collaborations,
-                research discussions, and innovative projects
-                involving machine learning, software engineering,
-                cloud systems, and future-focused technologies.
+                Interested in Machine Learning, Data Engineering,
+                Cloud Computing, Software Development, and Research.
+                If you're working on something ambitious,
+                I'd love to hear about it.
               </p>
 
-              <div className="flex flex-wrap gap-4">
-                <a
+              {/* Opportunity Areas */}
+              <div className="grid md:grid-cols-2 gap-4 mt-12 max-w-4xl">
+                {opportunities.map((item) => (
+                  <GlassCard className="p-5">
+                  {item}
+                </GlassCard>
+                ))}
+              </div>
+
+              {/* Contact Buttons */}
+              <div className="flex flex-wrap gap-4 mt-12">
+
+                <Button
+                  as="a"
                   href="mailto:karmendra5902@gmail.com"
-                  className="
-                    flex items-center gap-3
-                    px-6 py-4
-                    rounded-full
-                    border border-white/10
-                    hover:bg-white/10
-                    transition
-                  "
                 >
                   <Mail size={18} />
-                  Email
-                </a>
+                  Send Email
+                </Button>
 
-                <a
+                <Button
+                  as="a"
                   href="https://github.com/Karmendra55"
                   target="_blank"
-                  className="
-                    flex items-center gap-3
-                    px-6 py-4
-                    rounded-full
-                    border border-white/10
-                    hover:bg-white/10
-                    transition
-                  "
+                  rel="noopener noreferrer"
+                  variant="outline"
                 >
                   <FaGithub size={18} />
                   GitHub
-                </a>
+                </Button>
 
-                <a
+                <Button
+                  as="a"
                   href="https://linkedin.com/in/karmendra-bahadur-s-b71177137"
                   target="_blank"
-                  className="
-                    flex items-center gap-3
-                    px-6 py-4
-                    rounded-full
-                    border border-white/10
-                    hover:bg-white/10
-                    transition
-                  "
+                  rel="noopener noreferrer"
+                  variant="outline"
                 >
                   <FaLinkedin size={18} />
                   LinkedIn
-                </a>
+                </Button>
+
               </div>
+
+              {/* Footer Note */}
+              <p className="text-zinc-500 text-lg mt-8">
+                Typical response time: within a day.
+              </p>
+
             </div>
-          </div>
+          </GlassCard>
         </Reveal>
+
       </Container>
     </section>
   )

@@ -1,7 +1,14 @@
-import { useParams, Link } from "react-router-dom"
+import { useParams } from "react-router-dom"
 import { projectDetails } from "../data/projectDetails"
-import { ArrowLeft } from "lucide-react"
 import { FaGithub } from "react-icons/fa"
+
+import Container from "../components/ui/Container"
+import BackButton from "../components/ui/BackButton"
+import PageHero from "../components/ui/PageHero"
+import GlassCard from "../components/ui/GlassCard"
+import StatCard from "../components/ui/StatCard"
+import ScrollToTop from "../components/ui/ScrollToTop"
+import Button from "../components/ui/Button"
 
 const ProjectDetails = () => {
   const { slug } = useParams()
@@ -22,26 +29,14 @@ const ProjectDetails = () => {
 
   return (
     <main className="min-h-screen bg-[#050505] text-white">
-      <div className="max-w-6xl mx-auto px-6 py-24">
-        <Link
-            to="/"
-            className="
-                inline-flex
-                items-center
-                gap-2
-                text-zinc-400
-                hover:text-white
-                transition
-                mb-12
-            "
-            >
-            <ArrowLeft size={18} />
-            Back to Portfolio
-            </Link>
-        </div>
+      <ScrollToTop />
+      <Container className="pt-32">
+        <BackButton />
+      </Container>
+
         {/* HERO */}
 
-        <section className="max-w-6xl mx-auto px-6 py-16">
+        <Container className="py-16">
 
             <img
             src={project.heroImage}
@@ -55,32 +50,13 @@ const ProjectDetails = () => {
             "
             />
 
-            <p className="text-cyan-400 mb-4">
-            Case Study
-            </p>
+            <PageHero
+                badge="Case Study"
+                title={project.title}
+                description={project.subtitle}
+            />
 
-            <h1
-            className="
-                text-5xl
-                md:text-6xl
-                font-bold
-                mb-6
-            "
-            >
-            {project.title}
-            </h1>
-
-            <p
-            className="
-                text-zinc-400
-                text-xl
-                max-w-4xl
-            "
-            >
-            {project.subtitle}
-            </p>
-
-        </section>
+        </Container>
 
         {/* METRICS */}
 
@@ -89,24 +65,11 @@ const ProjectDetails = () => {
             <div className="grid md:grid-cols-4 gap-6">
 
             {project.metrics.map((metric) => (
-                <div
-                key={metric.label}
-                className="
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-white/5
-                    p-6
-                "
-                >
-                <p className="text-zinc-500 text-sm">
-                    {metric.label}
-                </p>
-
-                <h3 className="text-3xl font-bold mt-2">
-                    {metric.value}
-                </h3>
-                </div>
+                <StatCard
+                    key={metric.label}
+                    value={metric.value}
+                    label={metric.label}
+                />
             ))}
 
             </div>
@@ -157,19 +120,12 @@ const ProjectDetails = () => {
             <div className="flex flex-wrap gap-4">
 
                 {project.architecture.map((step) => (
-                <div
-                    key={step}
-                    className="
-                    px-5
-                    py-3
-                    rounded-xl
-                    border
-                    border-white/10
-                    bg-white/5
-                    "
-                >
-                    {step}
-                </div>
+                    <GlassCard
+                        key={step}
+                        className="px-5 py-3"
+                    >
+                        {step}
+                    </GlassCard>
                 ))}
 
             </div>
@@ -213,24 +169,18 @@ const ProjectDetails = () => {
             <div className="grid md:grid-cols-3 gap-6">
 
                 {project.challenges.map((challenge) => (
-                <div
-                    key={challenge.title}
-                    className="
-                    rounded-2xl
-                    border
-                    border-white/10
-                    bg-white/5
-                    p-6
-                    "
-                >
-                    <h3 className="font-semibold mb-4">
-                    {challenge.title}
-                    </h3>
+                    <GlassCard
+                        key={challenge.title}
+                        className="p-6"
+                    >
+                        <h3 className="font-semibold mb-4">
+                        {challenge.title}
+                        </h3>
 
-                    <p className="text-zinc-400">
-                    {challenge.description}
-                    </p>
-                </div>
+                        <p className="text-zinc-400">
+                        {challenge.description}
+                        </p>
+                    </GlassCard>
                 ))}
 
             </div>
@@ -246,18 +196,12 @@ const ProjectDetails = () => {
             <div className="grid md:grid-cols-2 gap-5">
 
                 {project.results.map((result) => (
-                <div
-                    key={result}
-                    className="
-                    rounded-xl
-                    border
-                    border-white/10
-                    bg-white/5
-                    p-5
-                    "
-                >
-                    {result}
-                </div>
+                    <GlassCard
+                        key={result}
+                        className="p-5"
+                    >
+                        {result}
+                    </GlassCard>
                 ))}
 
             </div>
@@ -284,25 +228,17 @@ const ProjectDetails = () => {
             {/* Github */}
 
             <a
-            href={project.github}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="
-                inline-flex
-                items-center
-                gap-3
-                px-6
-                py-4
-                rounded-xl
-                border
-                border-white/10
-                bg-white/5
-                hover:bg-white/10
-                transition
-            "
-            >
-            <FaGithub size={20} />
-            View Repository
+                href={project.github}
+                target="_blank"
+                rel="noopener noreferrer"
+                >
+                <Button
+                    variant="outline"
+                    className="inline-flex items-center gap-3"
+                >
+                    <FaGithub size={20} />
+                    View Repository
+                </Button>
             </a>
 
         </section>

@@ -35,6 +35,7 @@ const CursorGlow = () => {
         mass: 0.5,
       }}
       className="
+        hidden md:block
         pointer-events-none
         fixed
         top-0

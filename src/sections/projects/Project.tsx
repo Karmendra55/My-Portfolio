@@ -1,7 +1,7 @@
 import Container from "../../components/ui/Container"
 import ProjectCard from "../../components/ui/ProjectCard"
 import Reveal from "../../components/ui/Reveal"
-import SectionTitle from "../../components/ui/SectionTitle"
+import SectionTitle from "../../components/ui/SectionHeader"
 
 import { projects } from "../../data/projects"
 

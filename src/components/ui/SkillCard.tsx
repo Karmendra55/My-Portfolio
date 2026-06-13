@@ -17,14 +17,9 @@ const SkillCard = ({
         group
         relative
         overflow-hidden
-        rounded-3xl
-        border border-white/10
-        bg-white/3
         p-7
         transition-all
         duration-300
-        hover:border-white/20
-        hover:bg-white/5
       "
     >
       <div

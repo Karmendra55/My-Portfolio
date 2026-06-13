@@ -9,8 +9,9 @@ import {
 
 import Container from "../../components/ui/Container"
 import Reveal from "../../components/ui/Reveal"
-import SectionTitle from "../../components/ui/SectionTitle"
+import SectionTitle from "../../components/ui/SectionHeader"
 import SkillCard from "../../components/ui/SkillCard"
+import StatCard from "../../components/ui/StatCard"
 
 const skillCategories = [
   {
@@ -27,11 +28,12 @@ const skillCategories = [
       "CSS",
     ],
   },
+
   {
-    title: "Machine Learning",
+    title: "Machine Learning & AI",
     icon: <Brain size={28} />,
     skills: [
-      "Scikit-learn",
+      "Scikit-Learn",
       "TensorFlow",
       "Pandas",
       "NumPy",
@@ -40,8 +42,9 @@ const skillCategories = [
       "Streamlit",
     ],
   },
+
   {
-    title: "Cloud & DevOps",
+    title: "Cloud Computing",
     icon: <Cloud size={28} />,
     skills: [
       "AWS",
@@ -54,8 +57,9 @@ const skillCategories = [
       "Linux",
     ],
   },
+
   {
-    title: "Backend & Databases",
+    title: "Backend Engineering",
     icon: <Database size={28} />,
     skills: [
       "Flask",
@@ -66,19 +70,21 @@ const skillCategories = [
       "ETL",
     ],
   },
+
   {
-    title: "Frontend & UI",
+    title: "Frontend Development",
     icon: <LayoutDashboard size={28} />,
     skills: [
       "React",
-      "Tailwind",
+      "Tailwind CSS",
       "Tkinter",
       "Responsive Design",
       "UI Systems",
     ],
   },
+
   {
-    title: "Tools & Workflow",
+    title: "Developer Tools",
     icon: <Wrench size={28} />,
     skills: [
       "Git",
@@ -98,13 +104,66 @@ const Skills = () => {
       className="py-32"
     >
       <Container>
+
         <Reveal>
           <SectionTitle
             title="Skills & Expertise"
-            subtitle="Technical Stack"
+            subtitle="Technical Foundation"
           />
         </Reveal>
 
+        <Reveal>
+          <p
+            className="
+              text-zinc-400
+              text-lg
+              leading-relaxed
+              max-w-3xl
+              mt-8
+              mb-12
+            "
+          >
+            A multidisciplinary technical stack developed through
+            software engineering, machine learning projects,
+            cloud certifications, research publications,
+            and hands-on internship experience.
+          </p>
+        </Reveal>
+
+        {/* Summary Stats */}
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mb-16">
+
+          <Reveal>
+            <StatCard
+              value="10+"
+              label="Years Since First Coding Experience"
+            />
+          </Reveal>
+
+          <Reveal>
+            <StatCard
+              value="25+"
+              label="Technologies & Tools Used"
+            />
+          </Reveal>
+
+          <Reveal>
+            <StatCard
+              value="AWS + GCP"
+              label="Cloud Platforms"
+            />
+          </Reveal>
+
+          <Reveal>
+            <StatCard
+              value="ML + Data"
+              label="Primary Specialization"
+            />
+          </Reveal>
+
+        </div>
+
+        {/* Skill Categories */}
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-7">
           {skillCategories.map((category) => (
             <Reveal key={category.title}>
@@ -116,6 +175,7 @@ const Skills = () => {
             </Reveal>
           ))}
         </div>
+
       </Container>
     </section>
   )

@@ -1,25 +1,33 @@
 import Container from "../../components/ui/Container"
 import Reveal from "../../components/ui/Reveal"
-import SectionTitle from "../../components/ui/SectionTitle"
+import SectionTitle from "../../components/ui/SectionHeader"
+import StatCard from "../../components/ui/StatCard"
+import TechPills from "../../components/hero/TechPills"
+import { roles } from "../../data/roles"
 
 const stats = [
   {
-    number: "5+",
-    label: "ML & Software Projects",
-  },
-  {
     number: "10+",
+    label: "Projects Built",
+  },
+
+  {
+    number: "20+",
     label: "Certifications",
   },
+
   {
-    number: "3",
+    number: "4",
     label: "Research Publications",
   },
+
   {
     number: "AWS + GCP",
     label: "Cloud Experience",
   },
 ]
+
+
 
 const About = () => {
   return (
@@ -28,66 +36,87 @@ const About = () => {
       className="py-32"
     >
       <Container>
-        <Reveal>
-          <SectionTitle
-            title="About Me"
-            subtitle="Introduction"
-          />
 
-          <div className="grid lg:grid-cols-2 gap-16">
+        <SectionTitle
+          title="About Me"
+          subtitle="Engineer • Researcher • Builder"
+        />
+
+        <div className="grid lg:grid-cols-2 gap-16 mt-16">
+
+          {/* Content */}
+          <Reveal>
             <div>
+
               <p
                 className="
-                  text-zinc-400
-                  text-lg
+                  text-zinc-300
+                  text-xl
                   leading-relaxed
                 "
               >
-                Computer Science graduate focused on Machine Learning,
-                Data Engineering, Cloud Computing, and Software
-                Development. Experienced in building intelligent
-                applications, scalable backend systems, automation
-                workflows, and data-driven solutions using modern
-                technologies.
+                Computer Science Engineer focused on Machine Learning,
+                Data Engineering, Cloud Computing, and intelligent
+                software systems.
+              </p>
+
+              <p
+                className="
+                  text-zinc-400
+                  leading-relaxed
+                  mt-8
+                "
+              >
+                My work revolves around transforming ideas into
+                practical products through software engineering,
+                research, and experimentation. From machine learning
+                applications and cloud deployments to automation
+                workflows and data-driven platforms, I enjoy building
+                systems that solve real-world problems while remaining
+                scalable and user-focused.
               </p>
 
               <p
                 className="
                   text-zinc-500
-                  mt-8
                   leading-relaxed
+                  mt-6
                 "
               >
-                Interested in futuristic systems, space technology,
-                intelligent automation, storytelling, and the evolving
-                relationship between humans and technology.
+                Beyond technology, I am deeply interested in space
+                exploration, emerging technologies, futuristic systems,
+                and the long-term relationship between humanity and
+                intelligent machines. These interests often influence
+                both my research work and personal projects.
               </p>
-            </div>
 
+              {/* Focus Areas */}
+              <div className="flex flex-wrap gap-3 mt-10">
+
+                <TechPills items={roles} />
+
+              </div>
+
+            </div>
+          </Reveal>
+
+          {/* Stats */}
+          <Reveal>
             <div className="grid grid-cols-2 gap-5">
-              {stats.map((stat) => (
-                <div
-                  key={stat.label}
-                  className="
-                    p-6
-                    rounded-3xl
-                    border border-white/10
-                    bg-white/3
-                    backdrop-blur-md
-                  "
-                >
-                  <h3 className="text-3xl font-bold mb-2">
-                    {stat.number}
-                  </h3>
 
-                  <p className="text-zinc-400 text-sm leading-relaxed">
-                    {stat.label}
-                  </p>
-                </div>
+              {stats.map((stat) => (
+                <StatCard
+                  key={stat.label}
+                  value={stat.number}
+                  label={stat.label}
+                />
               ))}
+
             </div>
-          </div>
-        </Reveal>
+          </Reveal>
+
+        </div>
+
       </Container>
     </section>
   )
