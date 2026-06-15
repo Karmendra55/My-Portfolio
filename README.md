@@ -1,73 +1,191 @@
-# React + TypeScript + Vite
+# Karmendra Bahadur Srivastava - Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern developer portfolio showcasing projects, research publications, certifications, technical skills, and professional experience in Machine Learning, Data Engineering, Cloud Computing, and Software Development.
 
-Currently, two official plugins are available:
+## Live Website
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Portfolio: https://karmendra-portfolio.vercel.app
 
-## React Compiler
+## Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This portfolio serves as a centralized platform to showcase:
 
-## Expanding the ESLint configuration
+* Featured software engineering and machine learning projects
+* Research publications and technical contributions
+* Professional certifications and credentials
+* Technical skills and technology stack
+* Career journey and experience timeline
+* Current development roadmap and ongoing projects
+* Contact and collaboration information
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Features
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### Home Page
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+* Interactive hero section
+* Professional overview
+* Skills and expertise
+* Experience timeline
+* Featured projects
+* Research highlights
+* Certifications preview
+* Career snapshot
+* Contact section
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### Projects
+
+* Dedicated project showcase
+* Detailed project case studies
+* Technology stack breakdown
+* Engineering challenges
+* Results and lessons learned
+* GitHub repository links
+
+### Research
+
+* Research publications
+* Publication links
+* Research certificates
+* Academic and technical contributions
+
+### Certifications
+
+* Categorized certification library
+* Featured certifications
+* Direct certificate access
+* Technical credential verification
+
+### Journey
+
+* Interactive timeline of technical growth
+* Learning milestones
+* Career progression
+
+### Building Now
+
+* Current project roadmap
+* Active development updates
+* Future project pipeline
+
+## Tech Stack
+
+### Frontend
+
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+
+### Libraries
+
+* React Router
+* Framer Motion
+* Lucide React
+* React Icons
+
+### Deployment
+
+* Vercel
+
+## Project Structure
+
+```text
+src/
+├── assets/
+├── components/
+│   ├── hero/
+│   └── ui/
+├── data/
+├── pages/
+├── sections/
+└── main.tsx
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Installation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Clone the repository:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+git clone https://github.com/Karmendra55/My-Portfolio.git
 ```
+
+Navigate to the project:
+
+```bash
+cd My-Portfolio
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Run development server:
+
+```bash
+npm run dev
+```
+
+Build for production:
+
+```bash
+npm run build
+```
+
+Preview production build:
+
+```bash
+npm run preview
+```
+
+## Research Areas
+
+* Machine Learning
+* Healthcare AI
+* Data Engineering
+* Blockchain Technology
+* Wireless Sensor Networks
+* Aerospace Systems
+* Cloud Computing
+
+## Certifications
+
+The portfolio includes certifications from:
+
+* Google Cloud
+* AWS Academy
+* Python Institute
+* UiPath
+* NPTEL
+* Oracle Academy
+* IBM SkillsBuild
+* OpenEDG
+* HackerRank
+* Internshala
+
+## Future Improvements
+
+* Enhanced SEO
+* Lighthouse optimization
+* Custom domain
+* Analytics integration
+* Advanced animations
+* Additional case studies
+
+## Author
+
+Karmendra Bahadur Srivastava
+
+Machine Learning Engineer | Data Engineer | Cloud Engineer | Software Developer
+
+LinkedIn:
+https://linkedin.com/in/karmendra-bahadur-s-b71177137
+
+GitHub:
+https://github.com/Karmendra55
+
+## License
+
+This project is intended for personal portfolio and showcase purposes.
+All rights reserved.
